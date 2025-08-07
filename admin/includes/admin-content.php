@@ -17,10 +17,20 @@
                 </li>
             </ol>
 
+            
             <?php 
-                if($database->connection){
-                    echo "WOW";
-                }
+
+            $users = new User();
+            $all_users = $users->get_all_users();
+            $get_one_user = $users->get_user_by_id(1);
+
+
+            echo "<pre>";
+                print_r($get_one_user);
+            echo "</pre>";
+
+            //var_dump($all_users);
+
             ?>
         </div>
     </div>

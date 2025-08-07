@@ -1,6 +1,4 @@
 <?php 
-include("config.php");
-
 class Database{
     public $connection;
 
