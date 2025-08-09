@@ -4,6 +4,7 @@ class Session {
 
     private $signed_in = false;
     public  $user_id;
+    private  $message;
 
     public function __construct(){
         session_start();
@@ -36,6 +37,24 @@ class Session {
             $this->signed_in   = false;
         }
     }
+
+    public function message($msg = ""){
+        if(!empty($msg)){
+            $_SESSION['message'] = $msg;
+        }else{
+            return $this->message;
+        }
+    }
+
+    public function check_message(){
+        if(isset($_SESSION['message'])){
+            $this->message = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }else{
+            $this->message = "";
+        }
+    }
+
 }
 
 $session = new Session();

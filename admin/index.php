@@ -1,4 +1,10 @@
-<?php include("includes/header.php"); ?>
+<?php 
+include("includes/header.php");
+
+if(!$session->is_login()){
+    Helper::redirect('login.php');
+}
+?>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

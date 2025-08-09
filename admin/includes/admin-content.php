@@ -20,16 +20,20 @@
             
             <?php 
 
-            $users = new User();
-            $all_users = $users->get_all_users();
-            $get_one_user = $users->get_user_by_id(1);
+
+            $all_users = User::get_all_users();
+            $get_one_user = User::get_user_by_id(1);
 
 
+
+            foreach($all_users as $user){
+                echo $user->username . '<br>';
+            }
             echo "<pre>";
-                print_r($get_one_user);
+                print_r($all_users);
             echo "</pre>";
 
-            //var_dump($all_users);
+            var_dump($all_users);
 
             ?>
         </div>

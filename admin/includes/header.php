@@ -1,6 +1,7 @@
 <?php 
 ob_start();
 include("init.php");
+
 ?>
 
 <!DOCTYPE html>
