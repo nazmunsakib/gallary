@@ -57,4 +57,23 @@ class User {
         return !empty($result) ? array_shift($result) : false;
     }
 
+    public function create(){
+        global $database;
+
+        $username    = "'" . $database->str_escape($this->username) . "'";
+        $password    = "'" . $database->str_escape($this->password) . "'";
+        $first_name  = "'" . $database->str_escape($this->first_name) . "'";
+        $last_name   = "'" . $database->str_escape($this->last_name) . "'";
+
+        $sql = "INSERT INTO users (username, password, first_name, last_name)
+            VALUES ($username, $password, $first_name, $last_name)";
+
+        if ($database->query($sql)) {
+            $this->id = $database->inserted_id();
+            return true;
+        }
+
+        return false;
+    }
+
 }

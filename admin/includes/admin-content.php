@@ -19,26 +19,18 @@
 
             
             <?php 
+                $user = new User();
+                
+                // $user->username     = "arif";
+                // $user->password     = "123";
+                // $user->first_name   = "Arif";
+                // $user->last_name    = "Aslam";
 
-
-            $all_users = User::get_all_users();
-            $get_one_user = User::get_user_by_id(1);
-
-
-
-            foreach($all_users as $user){
-                echo $user->username . '<br>';
-            }
-            echo "<pre>";
-                print_r($all_users);
-            echo "</pre>";
-
-            var_dump($all_users);
-
+                //$user->create();
             ?>
         </div>
     </div>
     <!-- /.row -->
-
+ 
 </div>
 <!-- /.container-fluid -->
