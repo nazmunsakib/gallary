@@ -76,4 +76,19 @@ class User {
         return false;
     }
 
+    public function update(){
+        global $database;
+
+        $sql  = "UPDATE users SET ";
+        $sql .= "username='" . $database->str_escape($this->username) . "', ";
+        $sql .= "password='" . $database->str_escape($this->password) . "', ";
+        $sql .= "first_name='" . $database->str_escape($this->first_name) . "', ";
+        $sql .= "last_name='" . $database->str_escape($this->last_name) . "' ";
+        $sql .= "WHERE id=" . (int)$this->id; 
+
+        $database->query($sql);
+
+        return $database->connection->affected_rows ? true : false;
+    }
+
 }

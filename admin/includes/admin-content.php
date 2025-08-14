@@ -19,14 +19,20 @@
 
             
             <?php 
-                $user = new User();
+                //$user = new User();
                 
                 // $user->username     = "arif";
                 // $user->password     = "123";
                 // $user->first_name   = "Arif";
                 // $user->last_name    = "Aslam";
-
                 //$user->create();
+
+                // $user = User::get_user_by_id(4);
+                // $user->username     = 'mislam';
+                // $user->password     = '1234';
+                // $user->first_name   = 'Maidul';
+                // $user->last_name    = 'Islam';
+                // $user->update();
             ?>
         </div>
     </div>
